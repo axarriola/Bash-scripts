@@ -19,3 +19,10 @@ Now you can use that information, parse it and quantify it.
    60 172.25.0.10
 ```
 In this example 172.25.0.10 flapped 60 times in 10 minutes.
+
+Juniper has a KB where it explains how to do this, but the way they do it is a much longer command and cannot be run in Junos Freebsd. The one I specify is smaller (half the size) and can be run right there in Junos FreeBSD shell.
+
+This is the link:
+https://kb.juniper.net/InfoCenter/index?page=content&id=KB26261
+And this is their command:
+% cat /var/tmp/rtsockmon.txt | grep inet | grep add | grep route | cut -c 50- | awk '{print $1 " " $2}' | sort | uniq -c | rev |cut -b 7-| rev |sort
