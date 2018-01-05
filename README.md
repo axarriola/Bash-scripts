@@ -1,2 +1,2 @@
 # Bash-scripts
-Simple linux scripts used in real situations
+A few simple linux scripts used in real situations
