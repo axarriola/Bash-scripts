@@ -1,9 +1,9 @@
 # Route Flaps
-Sometimes devices have flapping routes which can affect CPU. Once I had high CPU usage in all the route reflectors, after investigating saw it was route resolution inet6.
+Sometimes devices have flapping routes which can affect CPU. Once I had high CPU usage in all our route reflectors, after investigating I saw it was route resolution inet6, and used this shell scripts to obtain the culprit routes.
 
 To check which routes are flapping the most you have to use rtsockmon to monitor routing socket activity. Routing sockets are used by the RPD to signal the addition, deletion, or change of routes to the kernel.
 
-First you have to save what the messages to a file.
+First you have to save the messages to a file.
 ```
 > start shell
 % rtsockmon -t > /var/tmp/rtsockmon.txt
